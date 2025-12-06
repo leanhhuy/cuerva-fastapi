@@ -1,0 +1,18 @@
+un# Install python3-venv if needed
+sudo apt-get install python3-venv
+
+# create Virtual Environment
+python3 -m venv venv-fastapi
+
+# go to venv-fastapi/bin
+cd venv-fastapi
+cd bin
+
+# activate Virtual Environment
+source activate
+
+# go to fastAPI source directory
+pip install -r requirements.txt
+
+# run FastAPI
+uvicorn main:app --host 0.0.0.0 --port 8000

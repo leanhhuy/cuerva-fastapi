@@ -1,0 +1,22 @@
+docker build -t fastapi .
+
+docker run -v C:/MARCOS/UGR/Altius-SN/FastAPI/fastapi-app-data:/data altius ls /data
+
+
+docker run -v C:/MARCOS/UGR/Altius-SN/FastAPI/fastapi-app-data:/data -it altius ls /data
+docker run -v C:/MARCOS/UGR/Altius-SN/FastAPI/fastapi-app-data:/data -it altius ls /data
+
+docker run -v C:/MARCOS/UGR/Altius-SN/FastAPI/fastapi-app-data:/data altius ls /data
+
+
+docker run -v C:/MARCOS/UGR/Altius-SN/FastAPI/fastapi-app-data:/data --name fastapi -p 8000:8000 fastapi
+
+docker run -v C:/MARCOS/UGR/Altius-SN/FastAPI/fastapi-app-data:/data -v C:\MARCOS\UGR\Altius-SN\FastAPI\fastapi-app-conf:/conf --name fastapi -p 8000:8000 fastapi
+
+# map source code directory to containter
+docker run --name fastapi -dp 8001:8000 -w /code -v C:\MARCOS\UGR\Altius-SN\FastAPI\fastapi-app:/code -v C:\MARCOS\UGR\Altius-SN\FastAPI\fastapi-app-data:/data fastapi
+
+docker stop fastapi
+docker start fastapi
+
+
