@@ -1,0 +1,18 @@
+services:
+  fastapi:
+    image: cuerva_fastapi
+    container_name: cuerva_fastapi
+    restart: always
+    build:
+      context: ./cuerva_fastapi
+    command: uvicorn main:app --host 0.0.0.0 --port 8000
+    environment:
+      - PYTHONPATH=/app
+    volumes:
+      - /home/scuser/cuerva_consumption_data:/consumption_data
+      - ./cuerva_fastapi:/app
+      - ./log:/log
+    ports:
+      - "8941:8000"
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
